@@ -1,4 +1,5 @@
 from netmiko import ConnectHandler
+import getpass
 
 #  Send Multiple Commands
 #  Using For Loop
@@ -6,9 +7,9 @@ from netmiko import ConnectHandler
 cisco_1 = {
     "device_type": "cisco_ios",
     "host": "",  #  IP or Hostname
-    "username": "",
-    "password": "",
-    "secret": ""  # Enable password
+    "username": "cisco",
+    "password": getpass(),
+    "secret": getpass(),  # Enable password
 }
 connection = ConnectHandler(**cisco_1)
 connection.enable() # Access Priv EXEC Mode
